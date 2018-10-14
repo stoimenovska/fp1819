@@ -1,69 +1,70 @@
 # Week 1
 
-## Contents
+## Съдържание
 
 - [DrRacket](#dr-racket)
-- [Syntax](#syntax)
-- [Examples](#examples)
+- [Синтаксис](#синтаксис)
+- [Примери](#примери)
+- [Задачи](#задачи)
 
 ## DrRacket
 
 - [Racket (PLT Scheme)](https://docs.racket-lang.org/guide/intro.html) vs [R5RS](https://docs.racket-lang.org/r5rs/r5rs-std/r5rs-Z-H-2.html#%_toc_start) vs R6RS
 - REPL (read-eval-print loop)
-- [DrRacket](https://racket-lang.org/) - for Windown, Linux and Mac OS
-    + definitions panel (for defining programs) + interactions panel (for evaluating expressions interactively) + run button (evaluates the program in the definitions panel and makes the programs definitions available in the interactions panel)
+- [DrRacket](https://racket-lang.org/) - за Windows, Linux and Mac OS
+    + definitions panel (за дефиниране на програми) + interactions panel (за интерактивно оценяване на изрази) + run бутон (прави дефинираните в definitions panel програми достъпни в interactions panel)
     + `#lang racket` or `#lang r5rs`
-- Alternatives
+- Алтернативи
     + [repl.it](https://repl.it/)
-    + text editor of choice + loading the code using racket, mzscheme or something else
-    + running scheme in emacs
+    + текстов редактор по избор + зареждане на програмата чрез racket, mzscheme, друго
+    + emacs
  
-## Syntax
+## Синтаксис
 
-- TODO: parentheses joke 
+- TODO: шега за скоби 
 
-- [indentation](http://community.schemewiki.org/?scheme-style)
+- [индентация](http://community.schemewiki.org/?scheme-style)
 
-- comments
-    + single-line comments are indicated by a semicolon ;
-    + multiline comments are defined using #| |#
+- коментари
+    + single-line коментари - чрез ;
+    + multiline коментари - чрез #| |#
 
-- simple data types
+- прости типове данни
     + boolean - #t, #f
-        * all non-#f values are treated as true
-        * related procedures - `boolean?`,  `and`, `or`, `not`
+        * всички стойности, различни от #f, се приемат за истина
+        * разни функции - `boolean?`,  `and`, `or`, `not`
     
     + number - integer, rational (eg 22/7), real (eg 3.14), complex (eg 2+3i) 
-        * related procedures - `integer?`, `rational?`, `real?`, `complex?`, `=`, `>`, `>=`, `<`, `<=`, `+`, `-`, `*`, `/`, `remainder` (`mod` в REPL.it), `quotient` (`div` в REPL.it), `abs`, `expt`, `sqrt`, `min`, `max`, `round`
+        * разни функции - `integer?`, `rational?`, `real?`, `complex?`, `=`, `>`, `>=`, `<`, `<=`, `+`, `-`, `*`, `/`, `remainder` (`mod` в REPL.it), `quotient` (`div` в REPL.it), `abs`, `expt`, `sqrt`, `min`, `max`, `round`
     
-    + character - prefixed with #\
-        * related procedures - `char?`
+    + character - префиксва се с #\
+        * разни функции - `char?`
     
-    + string - written between doublequotes
-        * related procedures - `string?`, `substring`, `string-append`
+    + string - между двойни кавички
+        * разни функции - `string?`, `substring`, `string-append`
 
-- function application - `(function arg1 arg2 … argN)`
-    + infix notation
-    + first the argument values are evaluated (from left to right) and then the function is applied
-    + some functions accept a fixed number of arguments (eg substring, remainder), others - accept any number of arguments (eg string-append, +)
+- прилагане на функции - `(function arg1 arg2 … argN)`
+    + инфиксен запис
+    + първо се оценяват стойностите на аргументите (отляво надясно) и тогава се прилага функцията
+    + някои функции приемат фикциран брой аргументи (пр. substring, remainder), друго - приемат произволен брой аргументи (пр. string-append, +)
 
-- definitions
-    + defining an expression  
+- дефиниции
+    + дефиниране на израз
     
         `(define symbol expression)`
-    + defining a function  
+    + дефиниране на функция  
         
         `(define (function-name parameters) body)`
 
-- conditional statements
-    + if statement
+- условни изрази
+    + if израз
         
         ```scheme
         (if predicate
             consequent 
             alternative)
         ```
-    + cond statement
+    + cond израз
 
       ```scheme
       (cond 
@@ -72,9 +73,9 @@
           (else expr3))
       ```
 
-- recusion
+- рекурсия
 
-## Examples
+## Примери
 
 ```scheme
 (define name "bepce")
@@ -94,3 +95,16 @@
       1
       (+ (fibonacci (- number 1)) (fibonacci (- number 2)))))
 ```
+
+## Задачи
+
+1. Дефинирайте предикат `(even? number)`, който проверява дали дадено число е четно
+2. Дефинирайте предикат `(triangle-sides? a b c)`, който проверява дали а, b, c могат да бъдат страни на триъгълник
+3. Дефинирайте функция `(factorial number)`, която връща number!
+4. Дефинирайте функция `(power base exp)`, която връща base на степен exp
+5. Дефинирайте функция `(gcd a b)`, която връща най-големия общ делител на a и b
+6. Дефинирайте функция `(sum start end)`, която намира сумата да всички целочислени числа в интервала [sum, end]
+7. Дефинирайте функция `(fibonacci n)`, която връща n-тото число на Фибоначи
+8. Дефинирайте предикат `(prime? number)`, който проверява дали дадено число е просто
+9. Дефинирайте функция `(decimal-to-binary number)`, която по дадено число в десетична бройна система, връща същото число в двоична бройна система
+10. Дефинирайте функция `(reverse number)`, която "обръща" дадено число
