@@ -25,7 +25,9 @@
   ```
   По време на "разширението" се създава верига от отложени операции, които след това се изпълняват по време на "свиването".
 
-- Итеративен подход
+- Итеративен подход  
+
+  For a function to be tail recursive, there must be nothing to do after the function returns except return its value. That is, the last thing that happens in the recursive step is the call to the function itself. 
   
     ```scheme
     (define (factorial number)
